@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Knockout Play</title>
+	<script src="scripts/knockout-3.3.0.js"></script>
+
+</head>
+<body>
+	<first-time params='name: "test"'></first-time>
+	<first-time params='name: "æg"'></first-time>
+
+	<script>
+		ko.components.register('first-time', {
+			template: "<p>Enter your name: <input data-bind='value: name'/></p>",
+			viewModel: function (params) {
+				this.name = ko.observable(params.name);
+			}
+		});
+
+		ko.applyBindings();
+	</script>
+
+
+</body>
+</html>
